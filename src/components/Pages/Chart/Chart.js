@@ -12,11 +12,6 @@ const data = [
 const COLORS = ["rgb(13, 13, 99)", "skyblue", "orange", "rgb(9, 185, 33)", "rgb(206, 17, 121)"];
 
 
-
-
-
-
-
 const Inner_data = [
     { name: "Group A", value: 340 },
     { name: "Group B", value: 330 },
@@ -26,6 +21,7 @@ const Inner_data = [
 ];
 
 const Inner_COLORS = ["orange", "rgb(206, 17, 121)", "skyblue", "rgb(13, 13, 99)", "rgb(9, 185, 33)"];
+
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -124,9 +120,6 @@ const Chart = () => {
                         outerRadius={80}
                         fill="#8884d8"
                         dataKey="value"
-                        shadowColor="#333"
-                        shadowBlur={20}
-                        shadowOffset={{ x: 0, y: 5 }}
                     >
                         {Inner_data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={Inner_COLORS[index % Inner_COLORS.length]} />
