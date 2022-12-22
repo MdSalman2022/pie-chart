@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from "react";
-import { PieChart, Pie, Cell, Label, Sector } from "recharts";
+import { PieChart, Pie, Cell, Label, Sector, Legend } from "recharts";
 import "./style.css"
+import { FaBeer } from 'react-icons/fa';
+
 
 const data = [
     { name: "Option A", value: 200 },
@@ -57,6 +59,8 @@ const CustomizedLabel = ({ x, y, width, value, index }) => {
     return (
         <text x={x} y={y}
             fill="black"
+            fontSize={20}
+            fontWeight={700}
             textAnchor={"middle"}
             dominantBaseline="central">
             {options[index]}
@@ -66,66 +70,69 @@ const CustomizedLabel = ({ x, y, width, value, index }) => {
 const Chart = () => {
     return (
         <div className="container">
-            <div className="">
-                <PieChart width={600} height={600}>
-                    <Pie
-                        data={data}
-                        cx={300}
-                        cy={300}
-                        innerRadius={180}
-                        outerRadius={280}
-                        dataKey="value"
+            <div className="pie">
+                <div className="shadow">
+                    <PieChart width={600} height={600}>
+                        <Pie
+                            data={data}
+                            cx={300}
+                            cy={300}
+                            innerRadius={180}
+                            outerRadius={280}
+                            dataKey="value"
 
-                        labelLine={false}
-                        label={renderCustomizedLabel}
-                    // label={<CustomizedLabel2 />}
+                            labelLine={false}
+                            label={renderCustomizedLabel}
+                        // label={<CustomizedLabel2 />}
 
-                    >
-                        {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}>
-                            </Cell>
-                        ))}
-                    </Pie>
-                    <Pie
-                        data={data}
-                        cx={300}
-                        cy={300}
-                        innerRadius={160}
-                        outerRadius={180}
-                        style={{ fill: '#fff' }}
+                        >
+                            {data.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}>
+                                </Cell>
+                            ))}
+                        </Pie>
+                        <Pie
+                            data={data}
+                            cx={300}
+                            cy={300}
+                            innerRadius={160}
+                            outerRadius={180}
+                            style={{ fill: '#fff' }}
 
-                    >
-                    </Pie>
-                    <Pie
-                        data={data}
-                        cx={300}
-                        cy={300}
-                        innerRadius={120}
-                        outerRadius={160}
-                        dataKey="value"
-                        stackOffset="expand"
+                        >
+                        </Pie>
+                        <Pie
+                            data={data}
+                            cx={300}
+                            cy={300}
+                            innerRadius={120}
+                            outerRadius={160}
+                            dataKey="value"
+                            stackOffset="expand"
 
-                        label={<CustomizedLabel />}
+                            label={<CustomizedLabel />}
 
-                    >
-                        {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}>
-                            </Cell>
-                        ))}
-                    </Pie>
-                    <Pie
-                        data={Inner_data}
-                        cx={300}
-                        cy={300}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                    >
-                        {Inner_data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={Inner_COLORS[index % Inner_COLORS.length]} />
-                        ))}
-                    </Pie>
-                </PieChart>
+                        >
+                            {data.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}>
+                                </Cell>
+                            ))}
+                        </Pie>
+                        <Pie
+                            data={Inner_data}
+                            cx={300}
+                            cy={300}
+                            outerRadius={80}
+                            fill="#8884d8"
+                            dataKey="value"
+                        >
+                            {Inner_data.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={Inner_COLORS[index % Inner_COLORS.length]} />
+                            ))}
+                        </Pie>
+                    </PieChart>
+                </div>
+
             </div>
         </div>
     );

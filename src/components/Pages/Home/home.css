@@ -1,0 +1,49 @@
+body{
+    position: relative;
+
+}
+.trophy{
+    position: absolute;
+    top: 35%;
+    left: 41.5%;
+    font-size: 35px; 
+    color: white;
+    background-size: cover;
+    z-index: 1;
+}
+.bulb{
+    position: absolute;
+    top: 68%;
+    left: 37.5%;
+    font-size: 45px; 
+    color: white;
+    background-size: cover;
+    z-index: 1;
+}
+.dots{
+    position: absolute;
+    top: 83%;
+    left: 52%;
+    font-size: 35px; 
+    color: white;
+    background-size: cover;
+    z-index: 1;
+}
+.briefcase{
+    position: absolute;
+    top: 56%;
+    left: 62%;
+    font-size: 35px; 
+    color: white;
+    background-size: cover;
+    z-index: 1;
+}
+.home{
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    font-size: 35px; 
+    color: white;
+    background-size: cover;
+    z-index: 1;
+}
